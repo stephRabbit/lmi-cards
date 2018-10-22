@@ -1,0 +1,132 @@
+body {
+  background-color: seagreen;
+  background-image: linear-gradient(
+    45deg,
+    #027551 25%, seagreen 25%,
+    seagreen 50%, #027551 50%, #027551 75%,
+    seagreen 75%, seagreen 100%
+  );
+  background-size: 2.83px 2.83px;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+.cards-header {
+  background-color: rgba(0, 0, 0, .55);
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, .3);
+  padding: 1rem;
+  text-align: center;
+}
+
+.cards-header__button {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: whitesmoke;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .85rem;
+  font-weight: 500;
+  padding: .5rem 1.5rem;
+  margin: .25rem;
+  min-width: 100px;
+  transition: background-color 0.5s ease;
+  vertical-align: middle;
+}
+
+.cards-header__button:hover {
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+}
+
+.cards-header__button--blue {
+  background-color: dodgerblue;
+}
+
+.cards-header__button--orange {
+  background-color: darkorange;
+}
+
+.cards-header__button--purple {
+  background-color: mediumpurple;
+}
+
+/* Cards container */
+.cards-grid {
+  display: grid;
+  grid-gap: .5rem;
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, 75px);
+  justify-content: center;
+  padding: 1.5rem .5rem;
+}
+
+.cards-grid--dark {
+  background-color: rgba(0, 0, 0, .25)
+}
+
+.cards-drawn {
+  border-radius: 3px;
+  color: whitesmoke;
+  font-weight: 500;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  padding: .5rem;
+}
+
+.cards-drawn__count {
+  font-size: 3rem;
+}
+
+/* Card */
+.card {
+  background-color: whitesmoke;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, .5);
+  border-radius: 3px;
+  height: 100px;
+  position: relative;
+  width: 75px;
+}
+
+.card__suit {
+  display: block;
+  width: 100%;
+}
+
+.card__suit--top {
+  padding-left: 2px;
+  text-align: left;
+}
+
+.card__suit--bottom {
+  bottom: 0;
+  position: absolute;
+  right: 2px;
+  text-align: left;
+  transform: rotate(180deg);
+}
+
+.card__number {
+  position: absolute;
+  top: 38%;
+  text-align: center;
+  width: 100%;
+}
+
+.card--black {
+  color: black;
+}
+
+.card--red {
+  color: crimson;
+}
