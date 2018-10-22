@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { shuffleArray } from './utils'
+import CardGrid from './components/styles/CardGrid'
 import Card from './components/Card'
 import Header from './components/Header'
 
@@ -81,17 +82,17 @@ class App extends Component {
           shuffleDeck={this.shuffleDeck}
         />
         {picked && (
-          <div className="cards-grid cards-grid--dark">
+          <CardGrid dark>
             <Card {...picked} />
             <div className="cards-drawn">
               <span className="cards-drawn__count">{cards.length}</span><br />Cards remaining
             </div>
-          </div>
+          </CardGrid>
         )}
         {cards.length > 0 && (
-          <div className="cards-grid">
+          <CardGrid>
             {this.renderDeck()}
-          </div>
+          </CardGrid>
         )}
       </div>
     )

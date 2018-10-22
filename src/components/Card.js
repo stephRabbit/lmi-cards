@@ -1,21 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import CardStyled from './styles/Card'
+
 const Card = ({ rank, suit }) => {
-  let className = "card"
+  let color = 'black';
   if (suit === '♥' || suit === '♦') {
-    className += ' card--red';
-  }
-  else {
-    className += ' card--black';
+    color = 'red';
   }
 
   return (
-    <div className={className}>
+    <CardStyled color={color}>
       <span className="card__suit card__suit--top">{suit}</span>
       <span className="card__number">{rank}</span>
       <span className="card__suit card__suit--bottom">{suit}</span>
-    </div>
+    </CardStyled>
   )
 }
 

@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import HeaderStyled from './styles/Header'
+import Button from './styles/Button'
+
 const Header = ({
   createDeck,
   cardCount,
@@ -9,34 +12,33 @@ const Header = ({
   shuffled,
 }) => {
   return (
-    <header className="cards-header">
+    <HeaderStyled>
       {cardCount > 0 && (
-        <button
-          className="cards-header__button cards-header__button--blue"
+        <Button
           onClick={shuffleDeck}
         >
-        Shuffle
-        </button>
+          Shuffle
+        </Button>
       )}
 
       {shuffled && cardCount > 0 && (
-        <button
-          className="cards-header__button cards-header__button--purple"
+        <Button
+          color="mediumpurple"
           onClick={drawCard}
         >
           Draw
-        </button>
+        </Button>
       )}
 
       {shuffled && (
-        <button
-          className="cards-header__button cards-header__button--orange"
+        <Button
+          color="darkorange"
           onClick={createDeck}
         >
-        Reset
-        </button>
+          Reset
+        </Button>
       )}
-    </header>
+    </HeaderStyled>
   )
 }
 
